@@ -1,13 +1,13 @@
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
-const jsonServerURL = 'https://my-json-server.typicode.com/ваш-json-server';
+const jsonServerURL = 'https://rzhurakovskiy-react-blog.vercel.app/api';
 
 export default function handler(req, res) {
   const proxy = createProxyMiddleware({
     target: jsonServerURL,
     changeOrigin: true,
     pathRewrite: {
-      '^/api': '', // Удаляем /api из запросов
+      '^/api': '',
     },
   });
 
