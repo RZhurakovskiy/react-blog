@@ -1,0 +1,565 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.app {
+  margin: 0 auto;
+  max-width: 800px;
+  padding-bottom: 50px;
+}
+.container {
+  max-width: 1000px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.download-data-message {
+  text-align: center;
+}
+.nodata-message {
+  text-align: center;
+}
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #054acd;
+}
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+  padding: 20px 30px;
+
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+.links {
+  font-size: 18px;
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
+  color: #1a94ff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.links a:hover {
+  color: #fff;
+  background-color: #1a94ff;
+}
+
+@media (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+  }
+
+  .navBar h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .links {
+    font-size: 18px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .links a {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #f2f2f2;
+  }
+
+  .links a:hover {
+    background-color: #054acd;
+    color: #fff;
+  }
+}
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Карточка поста */
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #eaeaea;
+}
+
+/* Контейнер для текста и инфо */
+.post-content-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  font-size: 22px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.post-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-title-link:hover .post-title {
+  color: #0056b3;
+}
+.post-meta {
+  padding-bottom: 20px;
+  color: #21867a;
+}
+
+.post-author {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.post-body {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.post-image-container {
+  width: 100%;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+}
+
+.btn-delete {
+  color: #ff4d4d;
+  font-size: 16px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.read-more-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.read-more-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .post-card {
+    flex-direction: column;
+  }
+
+  .post-content-container {
+    padding: 15px;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+
+  .post-author,
+  .post-body {
+    font-size: 14px;
+  }
+
+  .btn-delete {
+    font-size: 14px;
+  }
+}
+
+.blog-details {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Заголовок */
+.blog-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333333;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Метаданные (автор и время создания) */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666666;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 10px;
+}
+
+.meta .author {
+  color: #2a9d8f;
+  font-weight: bold;
+}
+
+.meta .timestamp {
+  font-size: 13px;
+}
+
+.blog-body {
+  line-height: 1.8;
+  font-size: 18px;
+  color: #4d4d4d;
+  margin-bottom: 30px;
+  white-space: pre-wrap;
+}
+
+.btn-back {
+  display: inline-block;
+  background: #2a9d8f;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #21867a;
+}
+
+@media (max-width: 768px) {
+  .blog-details {
+    padding: 15px;
+  }
+
+  .blog-title {
+    font-size: 28px;
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meta .timestamp {
+    margin-top: 5px;
+  }
+
+  .blog-body {
+    font-size: 16px;
+  }
+
+  .btn-back {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Основной контейнер */
+.create {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+/* Заголовок */
+.create h2 {
+  font-size: 28px;
+  color: #333333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Общий стиль для полей ввода и текстовых областей */
+.create input,
+.create textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 16px;
+  background: #f7f7f7;
+  color: #333333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.create input:focus,
+.create textarea:focus {
+  border-color: #2a9d8f;
+  box-shadow: 0 0 5px rgba(42, 157, 143, 0.8);
+  outline: none;
+}
+
+/* Группы формы */
+.create .form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Метка поля */
+.create label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Загрузка изображений */
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-file-input input[type="file"] {
+  display: none;
+}
+.custom-file-input label {
+  display: inline-block;
+  background-color: #2a9d8f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.custom-file-input label:hover {
+  background-color: #21867a;
+}
+
+/* Превью изображения */
+.image-preview {
+  margin-top: 20px;
+  position: relative;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 300px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.image-preview .btn-clear {
+  display: inline-block;
+  background: #e63946;
+  color: #ffffff;
+
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.image-preview .btn-clear:hover {
+  background: #d62828;
+}
+
+/* Кнопки */
+button {
+  background: #2a9d8f;
+  color: #fff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button[disabled] {
+  background-color: #dddddd;
+  cursor: not-allowed;
+}
+
+/* Snackbar */
+.snackbar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: #ffffff;
+  display: inline-block;
+}
+
+.snackbar.success {
+  background-color: #38b000;
+}
+
+.snackbar.error {
+  background-color: #e63946;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .create {
+    padding: 15px;
+  }
+
+  .create h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .create input,
+  .create textarea {
+    font-size: 14px;
+  }
+
+  .custom-file-input label {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .image-preview img {
+    max-height: 200px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+/* Snackbar */
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 14px;
+  z-index: 1000;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+.snackbar.success {
+  background-color: #4caf50;
+}
+.snackbar.error {
+  background-color: #f44336;
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 20px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+.autor {
+  padding-bottom: 40px;
+  font-weight: 300;
+}
