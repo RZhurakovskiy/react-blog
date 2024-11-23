@@ -1,9 +1,20 @@
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('../data/data.json');
-const middlewares = jsonServer.defaults();
 
-server.use(middlewares);
-server.use(router);
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
-module.exports = server;
+const jsonServerURL = 'https://my-json-server.typicode.com/ваш-json-server';
+
+export default function handler(req, res) {
+
+  const proxy = createProxyMiddleware({
+    target: jsonServerURL,
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api': '', 
+  });
+
+  return proxy(req, res, (result) => {
+    if (result instanceof Error) {
+      res.status(500).send('Ошибка проксирования');
+    }
+  });
+}
