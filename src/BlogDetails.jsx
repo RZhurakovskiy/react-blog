@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data: blog, isLoading, error } = useFetch('http://localhost:8000/posts/' + id);
+    const { data: blog, isLoading, error } = useFetch('https://rzhurakovskiy-react-blog.vercel.app/api/posts/' + id);
     const navigate = useNavigate();
 
 

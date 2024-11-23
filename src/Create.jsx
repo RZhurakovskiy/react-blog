@@ -70,7 +70,7 @@ const Create = () => {
     setIsPending(true);
 
     setTimeout(() => {
-      fetch("http://localhost:8000/posts", {
+      fetch("https://rzhurakovskiy-react-blog.vercel.app/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(post),

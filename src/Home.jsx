@@ -5,7 +5,7 @@ import useFetch from "./useFetch";
 const Home = () => {
   const [updateFlag, setUpdateFlag] = useState(false);
   const { data, isLoading, error } = useFetch(
-    "http://localhost:8000/posts",
+    "https://rzhurakovskiy-react-blog.vercel.app/api/posts",
     updateFlag
   );
 
