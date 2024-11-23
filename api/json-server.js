@@ -1,19 +1,10 @@
-import { createProxyMiddleware } from 'http-proxy-middleware';
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('../data/data.json');
+   
+const middlewares = jsonServer.defaults();
 
-const jsonServerURL = 'https://rzhurakovskiy-react-blog.vercel.app/api';
+server.use(middlewares);
+server.use(router);
 
-export default function handler(req, res) {
-  const proxy = createProxyMiddleware({
-    target: jsonServerURL,
-    changeOrigin: true,
-    pathRewrite: {
-      '^/api': '',
-    },
-  });
-
-  return proxy(req, res, (result) => {
-    if (result instanceof Error) {
-      res.status(500).send('Ошибка проксирования');
-    }
-  });
-}
+module.exports = server;
